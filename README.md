@@ -2,4 +2,4 @@
 
 Repository for Dearsoft-com documents.
 
-- DBSMOD: PHP library for database access. [Markdown](./DBSMOD/Documentation.md), [HTML](./DBSMOD/Documentation.html)
+- [DBSMOD Documentation](./DBSMOD/Documentation.html): PHP library for database access.
