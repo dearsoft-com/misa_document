@@ -28,6 +28,6 @@ jobs:
         commit_options: "--no-verify"
         file_pattern: "docs/dbsmod-documentation.html"
         branch: ${{ github.ref }}
-        commit_user_name: "GitHub Actions"
-        commit_user_email: "actions@github.com"
-        commit_author: "GitHub Actions <actions@github.com>"
+        commit_user_name: "Aaron2963"
+        commit_user_email: "neotgrr@gmail.com"
+        commit_author: "Aaron2963 <neotgrr@gmail.com>"
