@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>/mnt/e/DBSMOD/dist/DBSMOD/Documentation.md</title>
+    <title>./dist/DBSMOD/Documentation.md</title>
     <style>body {
     display: flex;
     margin: 0;
     padding: 0;
     height: 100vh;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 nav {
@@ -19,7 +18,7 @@ nav {
     overflow: auto;
     padding: 1rem;
     background-color: antiquewhite;
-    font-size: 0.875rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 nav dl {
@@ -43,22 +42,10 @@ main {
 }
 
 main code {
-    background-color: rgba(233, 233, 233, 0.85);
+    background-color: rgba(233,233,233,0.85);
     padding: 0.25rem;
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
-}
-
-#go-to {
-    position: fixed;
-    top: 1rem;
-    right: 2rem;
-}
-
-#go-to input {
-    width: 15rem;
-    padding: 0.25rem 0.5rem;
-    background-color: rgba(233, 233, 233, 0.85);
 }
 </style>
 </head>
@@ -67,7 +54,7 @@ main code {
     <nav></nav>
     <main>
         <h1>DBSMOD 說明文件</h1>
-<p><em>更新於 2023-05-22T03:31:36.338Z</em></p>
+<p><em>更新於 2023-07-21T02:46:19.867Z</em></p>
 <p><code>DBSMOD</code> 類別是封裝資料庫查詢作業的模組。<br />
 在根類別 <code>DBSMOD</code> 中包含了基本的資料庫查詢的方法，<br />
 繼承 <code>DBSMOD</code> 的子類別的目標則是將資料庫查詢作業封裝為一個方法。</p>
@@ -550,7 +537,7 @@ main code {
 <li><a href="#3322-resetpin">33.22 ResetPIN</a></li>
 <li><a href="#3323-activateotp">33.23 ActivateOTP</a></li>
 <li><a href="#3324-processotp">33.24 ProcessOTP</a></li>
-<li><a href="#3325-updatetypifocntprotected">33.25 UpdateTYPIFOCNT(protected)</a></li>
+<li><a href="#3326-updatetypifocntprotected">33.26 UpdateTYPIFOCNT(protected)</a></li>
 </ul>
 </li>
 <li><a href="#34-dbsmod_usergrp-extends-dbsmod">34. DBSMOD_UserGRP extends DBSMOD</a>
@@ -1153,7 +1140,7 @@ main code {
 </tbody>
 </table>
 <h2>5.2 __construct</h2>
-<pre><code class="language-php">public function __construct($SiteName, $ProjectDIR, $ModeDIR, $Protocol = 'https', $HostPath = 'localhost/site')
+<pre><code class="language-php">public function __construct($SiteName, $ProjectDIR, $ModeDIR, $Protocol = 'https', $HostPath = 'localhost/site', $SiteDIRName = 'site')
 </code></pre>
 <p>建構子</p>
 <table>
@@ -1189,6 +1176,11 @@ main code {
 <td align="left"><code>$HostPath</code></td>
 <td align="left"><code>string</code></td>
 <td align="left">主機名稱與路徑</td>
+</tr>
+<tr>
+<td align="left"><code>$SiteDIRName</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">專案用戶端目錄名稱</td>
 </tr>
 </tbody>
 </table>
@@ -9008,14 +9000,14 @@ echo $Sum['SALTax']; //22
 <pre><code>$Token = $_POST['token'];  
 $Mod = new DBSMOD_User($this-&gt;DBSLink, $this-&gt;DBS);  
 $Result = $Mod-&gt;ProcessOTP($Token);  
-echo $Result['UserIFOID];        //0r47ckwc6jy60rf1  
-echo $Result['UserID];           //0r47ckwc6jy60rf1  
-echo $Result['UserAliasName];    //John Doe  
-echo $Result['UserTYP];          //EPY  
-echo $Result['SessionID];        //  
-echo $Result['Scope];            //[&quot;get:user-info&quot;, &quot;put:user-info&quot;]  
-echo $Result['ExpireDateTime];   //2022-01-01 00:00:00  
-echo $Result['ACSToken];         //M7YdNTZhxPtQ8K4woqI9L0d...  
+echo $Result-&gt;UserIFOID;        //0r47ckwc6jy60rf1  
+echo $Result-&gt;UserID;           //0r47ckwc6jy60rf1  
+echo $Result-&gt;UserAliasName;    //John Doe  
+echo $Result-&gt;UserTYP;          //EPY  
+echo $Result-&gt;SessionID;        //  
+echo $Result-&gt;Scope;            //[&quot;get:user-info&quot;, &quot;put:user-info&quot;]  
+echo $Result-&gt;ExpireDateTime;   //2022-01-01 00:00:00  
+echo $Result-&gt;Token;            //M7YdNTZhxPtQ8K4woqI9L0d...  
 </code></pre>
 <table>
 <thead>
@@ -9039,8 +9031,8 @@ echo $Result['ACSToken];         //M7YdNTZhxPtQ8K4woqI9L0d...
 </tbody>
 </table>
 <p><strong>回傳</strong></p>
-<p><code>array</code>|<code>false</code> 通過驗證時回傳包含令牌 <code>ACSToken</code> 的用戶資料，失敗時回傳 <code>false</code></p>
-<h2>33.25 UpdateTYPIFOCNT(protected)</h2>
+<p>ACSTokenEntity|<code>false</code> 通過驗證時回傳令牌 <code>ACSToken</code> 的物件，失敗時回傳 <code>false</code></p>
+<h2>33.26 UpdateTYPIFOCNT(protected)</h2>
 <pre><code class="language-php">protected function UpdateTYPIFOCNT($ID, $Count = 1)
 </code></pre>
 <p>更新資料計數</p>
@@ -14456,14 +14448,9 @@ echo $R_SMS ? 'sent successfully' : 'failed to send';
 <p><code>string</code> 最適合的語言代碼</p>
 
     </main>
-    <div id="go-to">
-        <input type="text" id="heading-name" name="heading-name" list="heading-list" placeholder="Go to...">
-        <datalist id="heading-list"></datalist>
-    </div>
     <script>
         const navbar = document.querySelector('nav');
 const main = document.querySelector('main');
-const headingList = document.getElementById('heading-list');
 const children = main.children;
 const toc = {};
 
@@ -14475,9 +14462,6 @@ for (let i = 0; i < children.length; i++) {
     const text = child.innerText;
     const id = encodeURI(text.replace(/\s/g, '-'));
     child.setAttribute('id', id);
-    const opt = document.createElement('option');
-    opt.setAttribute('value', text);
-    headingList.appendChild(opt);
     if (tag === 'h1') {
         toc[id] = {
             id, text,
@@ -14541,12 +14525,6 @@ for (let h1 in toc) {
     }
     navbar.appendChild(dl);
 }
-
-document.getElementById('heading-name').addEventListener('change', (e) => {
-    const id = e.target.value;
-    const el = document.getElementById(encodeURI(id.replace(/\s/g, '-')));
-    el.scrollIntoView();
-});
 
     </script>
 </body>
