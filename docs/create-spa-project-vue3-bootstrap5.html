@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D:\misa_document\docs\Create SPA Project with Vue3 & Bootstrap5.md</title>
+  <style>
+    body {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+    }
+
+    nav {
+      max-width: 300px;
+      max-height: 100%;
+      overflow: auto;
+      padding: 1rem;
+      background-color: antiquewhite;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    nav dl {
+      margin-top: 0;
+    }
+
+    nav dd {
+      margin-inline-start: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      line-height: 2;
+    }
+
+    main {
+      flex: 1;
+      padding-left: 1rem;
+      max-height: 100%;
+      overflow: auto;
+    }
+
+    main code {
+      background-color: rgba(233, 233, 233, 0.85);
+      padding: 0.25rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.25rem;
+      line-height: 1.5;
+    }
+
+    pre>code {
+      display: block;
+      margin-left: 0.25rem;
+      margin-right: 0.25rem;
+      user-select: all;
+    }
+  </style>
+</head>
+
+<body>
+  <nav></nav>
+  <main>
+    <h1>Create SPA Project with Vue3 &amp; Bootstrap5</h1>
+    <h2>Introduction</h2>
+    <p>In this article, we will create a single page application project with Vue3 and Bootstrap5.</p>
+    <h2>Prerequisites</h2>
+    <ul>
+      <li>Node.js</li>
+      <li>NPM</li>
+      <li>Vite</li>
+    </ul>
+    <h2>Steps</h2>
+    <h3>1. Create a new project</h3>
+    <p>We will use Vite to create a new project.<br />
+      First, open terminal and change directory to the workspace root.</p>
+    <pre><code class="language-bash">$ cd /path/to/workspace-root
+</code></pre>
+    <p>Then, call NPM to create a new project, you will be asked to enter the project name, and select the framework.
+    </p>
+    <pre><code class="language-bash">$ npm create vite@latest
+✔ Project name: · {project-name}
+✔ Select a framework: › vue
+✔ Select a variant: › javascript
+</code></pre>
+    <p>After that, change directory to the project root, and install dependencies.</p>
+    <pre><code class="language-bash">$ cd {project-name}
+$ npm install
+</code></pre>
+    <p>Now we have a new project with Vue3.</p>
+    <h3>2. Set vite.config.js</h3>
+    <p>In default settings, Vite will build the project to the <code>dist</code> directory, and all files would be
+      directly under the <code>dist</code> directory.<br />
+      To make the project organized as other Dearsoft project, we need to change the hierarchy of the <code>dist</code>
+      directory as below.</p>
+    <pre><code>dist
+├── css/client_ui
+│   └── index-{hash}.css
+├── images/client_ui
+│   └── {image-file}
+└── scripts/client_ui
+    └── index-{hash}.js
+</code></pre>
+    <p>To do this, we need to set the <code>vite.config.js</code> file.</p>
+    <pre><code class="language-js">// vite.config.js
+import { fileURLToPath } from 'url'
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [vue()],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: (assetInfo) =&gt; {
+          let ext = assetInfo.name?.split('.').at(1) ?? 'other'
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+            ext = 'images/client_ui'
+          } else if (ext == 'css') {
+            ext = 'css/client_ui'
+          }
+          return `${ext}/[name]-[hash][extname]`
+        },
+        chunkFileNames: 'scripts/client_ui/[name]-[hash].js',
+        entryFileNames: 'scripts/client_ui/[name]-[hash].js',
+      }
+    },
+  },
+})
+</code></pre>
+    <h3>3. Set environment variables</h3>
+    <p>We need to set the environment variables for the project.<br />
+      First, create a <code>.env</code> file in the project root.</p>
+    <pre><code># .env
+VITE_APP_SITE_TITLE=&quot;{site-title}&quot;
+VITE_APP_API_HOST=&quot;https://{api-host}&quot;
+</code></pre>
+    <p><strong>IMPORTANT:</strong> For variables with <code>VITE_APP_</code> prefix, we can access them in the project
+      with <code>import.meta.env.VITE_APP_{variable-name}</code>.</p>
+    <h3>4. Install Bootstrap5</h3>
+    <p>We will use Bootstrap5 for the UI framework.</p>
+    <pre><code class="language-bash">$ npm install bootstrap
+</code></pre>
+    <p>Then, import Bootstrap5 in the <code>main.js</code> file.</p>
+    <pre><code class="language-js">// src/main.js
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap'
+import '@/assets/style.css'
+import { createApp } from 'vue'
+import App from './App.vue'
+//TODO: import router...
+
+createApp(App).mount('#app')
+</code></pre>
+    <h3>5. Install vue-router</h3>
+    <p>To build a single page application, we need to install vue-router.</p>
+    <pre><code class="language-bash">$ npm install vue-router
+</code></pre>
+    <p>Then, create a <code>router.js</code> file in the <code>src</code> directory.</p>
+    <pre><code class="language-js">// src/router.js
+import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '@/views/HomeView.vue'
+
+const title = import.meta.env.VITE_APP_SITE_TITLE
+const router = createRouter({
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: HomeView
+    }
+  ],
+})
+router.afterEach((to, _) =&gt; {
+  document.title = to.meta.title ? `${to.meta.title} - ${title}` : title
+})
+
+export default router
+</code></pre>
+    <p><em><strong>NOTE:</strong> We will create the <code>HomeView.vue</code> file later.</em></p>
+    <p>Then, import the router in the <code>main.js</code> file.</p>
+    <pre><code class="language-js">// src/main.js
+import { createApp } from 'vue'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap'
+import '@/assets/style.css'
+import App from './App.vue'
+import router from './router'
+
+createApp(App).use(router).mount('#app')
+</code></pre>
+    <h3>6. Create views</h3>
+    <p>To separate views (called by router) and components (composing part of views), we will create a
+      <code>views</code> directory in the <code>src</code> directory.</p>
+    <pre><code class="language-bash">$ mkdir src/views
+</code></pre>
+    <p>Then, create a <code>HomeView.vue</code> file in the <code>src/views</code> directory, and copy original code
+      from <code>App.vue</code> to <code>HomeView.vue</code>.</p>
+    <pre><code class="language-vue">&lt;!-- src/views/HomeView.vue --&gt;
+&lt;script setup&gt;
+import HelloWorld from '@/components/HelloWorld.vue'
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;a href=&quot;https://vitejs.dev&quot; target=&quot;_blank&quot;&gt;
+      &lt;img src=&quot;/vite.svg&quot; class=&quot;logo&quot; alt=&quot;Vite logo&quot; /&gt;
+    &lt;/a&gt;
+    &lt;a href=&quot;https://vuejs.org/&quot; target=&quot;_blank&quot;&gt;
+      &lt;img src=&quot;@/assets/vue.svg&quot; class=&quot;logo vue&quot; alt=&quot;Vue logo&quot; /&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+  &lt;HelloWorld msg=&quot;Vite + Vue&quot; /&gt;
+&lt;/template&gt;
+
+&lt;style scoped&gt;
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vue:hover {
+  filter: drop-shadow(0 0 2em #42b883aa);
+}
+&lt;/style&gt;
+</code></pre>
+    <p><strong>NOTE:</strong> Do not forget to change file path <code>./</code> to <code>@/</code>.</p>
+    <p>Then, change the <code>App.vue</code> file as below.</p>
+    <pre><code class="language-vue">&lt;!-- src/App.vue --&gt;
+&lt;template&gt;
+  &lt;RouterView /&gt;
+&lt;/template&gt;
+</code></pre>
+    <h3>7. Initialize git repository</h3>
+    <p>To manage the project with git, we need to initialize git repository.</p>
+    <pre><code class="language-bash">$ git init
+</code></pre>
+    <p>If there are sensitive information in environment variables (such as API key), we need to add <code>.env</code>
+      to <code>.gitignore</code> file.</p>
+    <h3>8. Done</h3>
+    <p>Now we have a single page application project with Vue3 and Bootstrap5.</p>
+  </main>
+  <script>
+    const navbar = document.querySelector('nav');
+    const main = document.querySelector('main');
+    const children = main.children;
+    const toc = {};
+
+    let cursorH1, cursorH2;
+    for (let i = 0; i < children.length; i++) {
+      const child = children[i];
+      const tag = child.tagName.toLowerCase();
+      if (['h1', 'h2', 'h3'].indexOf(tag) === -1) continue;
+      const text = child.innerText;
+      const id = encodeURI(text.replace(/\s/g, '-'));
+      child.setAttribute('id', id);
+      if (tag === 'h1') {
+        toc[id] = {
+          id, text,
+          item: {},
+        };
+        cursorH1 = toc[id].item;
+      }
+      if (tag === 'h2') {
+        cursorH1[id] = {
+          id, text,
+          item: {},
+        };
+        cursorH2 = cursorH1[id].item;
+      }
+      if (tag === 'h3') {
+        cursorH2[id] = { id, text };
+      }
+    }
+
+    console.log(JSON.stringify(toc, null, 2));
+
+    for (let h1 in toc) {
+      const header = toc[h1];
+      const dl = document.createElement('dl');
+      const dt = document.createElement('dt');
+      const a = document.createElement('a');
+      a.setAttribute('href', `#${header.id}`);
+      a.innerText = header.text;
+      dt.appendChild(a);
+      dl.appendChild(dt);
+      console.log(header.item);
+      if (Object.keys(header.item).length > 0) {
+        const dd = document.createElement('dd');
+        const dl2 = document.createElement('dl');
+        for (let h2 in header.item) {
+          const header2 = header.item[h2];
+          const dt2 = document.createElement('dt');
+          const a2 = document.createElement('a');
+          a2.setAttribute('href', `#${header2.id}`);
+          a2.innerText = header2.text;
+          dt2.appendChild(a2);
+          dl2.appendChild(dt2);
+          dd.appendChild(dl2);
+          dl.appendChild(dd);
+          if (Object.keys(header2.item).length > 0) {
+            const dd2 = document.createElement('dd');
+            const dl3 = document.createElement('dl');
+            for (let h3 in header2.item) {
+              const header3 = header2.item[h3];
+              const dt3 = document.createElement('dt');
+              const a3 = document.createElement('a');
+              a3.setAttribute('href', `#${header3.id}`);
+              a3.innerText = header3.text;
+              dt3.appendChild(a3);
+              dl3.appendChild(dt3);
+            }
+            dd2.appendChild(dl3);
+            dl2.appendChild(dd2);
+          }
+        }
+      }
+      navbar.appendChild(dl);
+    }
+
+  </script>
+</body>
+
+</html>
