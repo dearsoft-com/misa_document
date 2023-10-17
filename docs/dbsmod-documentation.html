@@ -54,7 +54,7 @@ main code {
     <nav></nav>
     <main>
         <h1>DBSMOD 說明文件</h1>
-<p><em>更新於 2023-10-17T06:55:13.733Z</em></p>
+<p><em>更新於 2023-10-17T08:48:11.993Z</em></p>
 <p><a href="https://github.com/dearsoft-com/DBSMOD">DBSMOD 存放區 (私有)</a></p>
 <p><code>DBSMOD</code> 類別是資料庫查詢作業的模組。在根類別 <code>DBSMOD</code> 中包含了基本的資料庫查詢的方法，而繼承 <code>DBSMOD</code> 的子類別 (如 <code>DBSMOD_User</code>, <code>DBSMOD_PDT</code> 等) 則是將常用的資料庫查詢作業整合為物件的方法，讓不同的服務都能夠遵循一致的資料庫使用邏輯。</p>
 <p>例如，新增產品時會進行多次資料庫查詢</p>
@@ -198,6 +198,20 @@ main code {
 <li><a href="#15-dbsmod_coupon-extends-dbsmod">15. DBSMOD_Coupon extends DBSMOD</a>
 <ul>
 <li><a href="#151-settablesprotected">15.1 SetTables(protected)</a></li>
+<li><a href="#152-select">15.2 Select</a></li>
+<li><a href="#153-create">15.3 Create</a></li>
+<li><a href="#154-update">15.4 Update</a></li>
+<li><a href="#155-delete">15.5 Delete</a></li>
+<li><a href="#156-selecttyp">15.6 SelectTYP</a></li>
+<li><a href="#157-createtyp">15.7 CreateTYP</a></li>
+<li><a href="#158-updatetyp">15.8 UpdateTYP</a></li>
+<li><a href="#159-deletetyp">15.9 DeleteTYP</a></li>
+<li><a href="#1510-selectcode">15.10 SelectCode</a></li>
+<li><a href="#1511-createcode">15.11 CreateCode</a></li>
+<li><a href="#1512-updatecode">15.12 UpdateCode</a></li>
+<li><a href="#1513-deletecode">15.13 DeleteCode</a></li>
+<li><a href="#1514-exchangecoupon">15.14 ExchangeCoupon</a></li>
+<li><a href="#1515-updatetypifocntprotected">15.15 UpdateTYPIFOCNT(protected)</a></li>
 </ul>
 </li>
 <li><a href="#16-dbsmod_course-extends-dbsmod">16. DBSMOD_Course extends DBSMOD</a>
@@ -2465,6 +2479,362 @@ main code {
 <p>設定預設資料表參數 (實作抽象方法)</p>
 <p><strong>回傳</strong></p>
 <p><code>array</code></p>
+<h2>15.2 Select</h2>
+<pre><code class="language-php">public function Select($ID, $Field_Array = array())
+</code></pre>
+<p>查詢單筆資料</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">CouponID</td>
+</tr>
+<tr>
+<td align="left"><code>$Field_Array</code></td>
+<td align="left"><code>array</code></td>
+<td align="left">查詢的資料表欄位名稱陣列</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>array</code>|<code>false</code></p>
+<h2>15.3 Create</h2>
+<pre><code class="language-php">public function Create($R_Data)
+</code></pre>
+<p>新增資料</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$R_Data</code></td>
+<td align="left"><code>array</code></td>
+<td align="left">Coupon資料表欄位名稱與資料的映射</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>array</code>|<code>false</code></p>
+<h2>15.4 Update</h2>
+<pre><code class="language-php">public function Update($ID, $R_Data)
+</code></pre>
+<p>更新資料</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">CouponID</td>
+</tr>
+<tr>
+<td align="left"><code>$R_Data</code></td>
+<td align="left"><code>array</code></td>
+<td align="left">Coupon資料表欄位名稱與資料的映射</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>array</code>|<code>false</code></p>
+<h2>15.5 Delete</h2>
+<pre><code class="language-php">public function Delete($ID)
+</code></pre>
+<p>刪除資料</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">CouponID</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>bool</code></p>
+<h2>15.6 SelectTYP</h2>
+<pre><code class="language-php">public function SelectTYP($ID, $Field_Array = array())
+</code></pre>
+<p>查詢單筆 CouponTYP</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">CouponTYPID</td>
+</tr>
+<tr>
+<td align="left"><code>$Field_Array</code></td>
+<td align="left"><code>array</code></td>
+<td align="left">查詢的資料表欄位名稱陣列</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>array</code>|<code>false</code></p>
+<h2>15.7 CreateTYP</h2>
+<pre><code class="language-php">public function CreateTYP($R_Data)
+</code></pre>
+<p>新增資料 CouponTYP</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$R_Data</code></td>
+<td align="left"><code>array</code></td>
+<td align="left">CouponTYP資料表欄位名稱與資料的映射</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>array</code>|<code>false</code></p>
+<h2>15.8 UpdateTYP</h2>
+<pre><code class="language-php">public function UpdateTYP($ID, $R_Data)
+</code></pre>
+<p>更新資料 CouponTYP</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">CouponTYPID</td>
+</tr>
+<tr>
+<td align="left"><code>$R_Data</code></td>
+<td align="left"><code>array</code></td>
+<td align="left">CouponTYP資料表欄位名稱與資料的映射</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>array</code>|<code>false</code></p>
+<h2>15.9 DeleteTYP</h2>
+<pre><code class="language-php">public function DeleteTYP($ID)
+</code></pre>
+<p>刪除資料 CouponTYP</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">CouponTYPID</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>bool</code></p>
+<h2>15.10 SelectCode</h2>
+<pre><code class="language-php">public function SelectCode($ID, $Field_Array = array())
+</code></pre>
+<p>查詢單筆 CouponCode</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">CouponCodeID</td>
+</tr>
+<tr>
+<td align="left"><code>$Field_Array</code></td>
+<td align="left"><code>array</code></td>
+<td align="left">查詢的資料表欄位名稱陣列</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>array</code>|<code>false</code></p>
+<h2>15.11 CreateCode</h2>
+<pre><code class="language-php">public function CreateCode($R_Data)
+</code></pre>
+<p>新增資料 CouponCode</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$R_Data</code></td>
+<td align="left"><code>array</code></td>
+<td align="left">CouponCode資料表欄位名稱與資料的映射</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>array</code>|<code>false</code></p>
+<h2>15.12 UpdateCode</h2>
+<pre><code class="language-php">public function UpdateCode($ID, $R_Data)
+</code></pre>
+<p>更新資料 CouponCode</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">CouponCodeID</td>
+</tr>
+<tr>
+<td align="left"><code>$R_Data</code></td>
+<td align="left"><code>array</code></td>
+<td align="left">CouponCode資料表欄位名稱與資料的映射</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>array</code>|<code>false</code></p>
+<h2>15.13 DeleteCode</h2>
+<pre><code class="language-php">public function DeleteCode($ID)
+</code></pre>
+<p>刪除資料 CouponCode</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">CouponCodeID</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>bool</code></p>
+<h2>15.14 ExchangeCoupon</h2>
+<pre><code class="language-php">public function ExchangeCoupon($CouponID, $UserID, $Note = '', $DateTime = null)
+</code></pre>
+<p>兌換 Coupon；若成功，會同時更新 CouponCode、CouponEHG、Coupon 資料表</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$CouponID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">要兌換的 CouponID</td>
+</tr>
+<tr>
+<td align="left"><code>$UserID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">兌換者的 UserID</td>
+</tr>
+<tr>
+<td align="left"><code>$Note</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">非必填，兌換備註，預設為空字串</td>
+</tr>
+<tr>
+<td align="left"><code>$DateTime</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">非必填，兌換時間，預設為當前時間</td>
+</tr>
+</tbody>
+</table>
+<h2>15.15 UpdateTYPIFOCNT(protected)</h2>
+<pre><code class="language-php">protected function UpdateTYPIFOCNT($ID, $Count = 1)
+</code></pre>
+<p>更新資料計數</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">CouponTYPID</td>
+</tr>
+<tr>
+<td align="left"><code>$Count</code></td>
+<td align="left"><code>integer</code></td>
+<td align="left">計數待相加的數字</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>int</code>|<code>bool</code></p>
 <h1>16. DBSMOD_Course extends DBSMOD</h1>
 <h2>16.1 Properties</h2>
 <table>
