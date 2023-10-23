@@ -54,7 +54,7 @@ main code {
     <nav></nav>
     <main>
         <h1>DBSMOD 說明文件</h1>
-<p><em>更新於 2023-10-17T08:48:11.993Z</em></p>
+<p><em>更新於 2023-10-23T12:01:24.614Z</em></p>
 <p><a href="https://github.com/dearsoft-com/DBSMOD">DBSMOD 存放區 (私有)</a></p>
 <p><code>DBSMOD</code> 類別是資料庫查詢作業的模組。在根類別 <code>DBSMOD</code> 中包含了基本的資料庫查詢的方法，而繼承 <code>DBSMOD</code> 的子類別 (如 <code>DBSMOD_User</code>, <code>DBSMOD_PDT</code> 等) 則是將常用的資料庫查詢作業整合為物件的方法，讓不同的服務都能夠遵循一致的資料庫使用邏輯。</p>
 <p>例如，新增產品時會進行多次資料庫查詢</p>
@@ -195,123 +195,123 @@ main code {
 <li><a href="#143-removecourse">14.3 RemoveCourse</a></li>
 </ul>
 </li>
-<li><a href="#15-dbsmod_coupon-extends-dbsmod">15. DBSMOD_Coupon extends DBSMOD</a>
+<li><a href="#15-dbsmod_course-extends-dbsmod">15. DBSMOD_Course extends DBSMOD</a>
 <ul>
-<li><a href="#151-settablesprotected">15.1 SetTables(protected)</a></li>
-<li><a href="#152-select">15.2 Select</a></li>
-<li><a href="#153-create">15.3 Create</a></li>
-<li><a href="#154-update">15.4 Update</a></li>
-<li><a href="#155-delete">15.5 Delete</a></li>
-<li><a href="#156-selecttyp">15.6 SelectTYP</a></li>
-<li><a href="#157-createtyp">15.7 CreateTYP</a></li>
-<li><a href="#158-updatetyp">15.8 UpdateTYP</a></li>
-<li><a href="#159-deletetyp">15.9 DeleteTYP</a></li>
-<li><a href="#1510-selectcode">15.10 SelectCode</a></li>
-<li><a href="#1511-createcode">15.11 CreateCode</a></li>
-<li><a href="#1512-updatecode">15.12 UpdateCode</a></li>
-<li><a href="#1513-deletecode">15.13 DeleteCode</a></li>
-<li><a href="#1514-exchangecoupon">15.14 ExchangeCoupon</a></li>
-<li><a href="#1515-updatetypifocntprotected">15.15 UpdateTYPIFOCNT(protected)</a></li>
+<li><a href="#151-properties">15.1 Properties</a></li>
+<li><a href="#152-settablesprotected">15.2 SetTables(protected)</a></li>
+<li><a href="#153-select">15.3 Select</a></li>
+<li><a href="#154-create">15.4 Create</a></li>
+<li><a href="#155-update">15.5 Update</a></li>
+<li><a href="#156-delete">15.6 Delete</a></li>
+<li><a href="#157-selecttyp">15.7 SelectTYP</a></li>
+<li><a href="#158-createtyp">15.8 CreateTYP</a></li>
+<li><a href="#159-updatetyp">15.9 UpdateTYP</a></li>
+<li><a href="#1510-deletetyp">15.10 DeleteTYP</a></li>
+<li><a href="#1511-selecttocitem">15.11 SelectTOCItem</a></li>
+<li><a href="#1512-createtocitem">15.12 CreateTOCItem</a></li>
+<li><a href="#1513-updatetocitem">15.13 UpdateTOCItem</a></li>
+<li><a href="#1514-deletetocitem">15.14 DeleteTOCItem</a></li>
+<li><a href="#1515-appendtextbook">15.15 AppendTextbook</a></li>
+<li><a href="#1516-removetextbook">15.16 RemoveTextbook</a></li>
+<li><a href="#1517-updatetypifocntprotected">15.17 UpdateTYPIFOCNT(protected)</a></li>
+<li><a href="#1518-getinitstatusflagprotected">15.18 GetInitStatusFlag(protected)</a></li>
 </ul>
 </li>
-<li><a href="#16-dbsmod_course-extends-dbsmod">16. DBSMOD_Course extends DBSMOD</a>
+<li><a href="#16-dbsmod_cus-extends-dbsmod">16. DBSMOD_CUS extends DBSMOD</a>
 <ul>
-<li><a href="#161-properties">16.1 Properties</a></li>
-<li><a href="#162-settablesprotected">16.2 SetTables(protected)</a></li>
-<li><a href="#163-select">16.3 Select</a></li>
-<li><a href="#164-create">16.4 Create</a></li>
-<li><a href="#165-update">16.5 Update</a></li>
-<li><a href="#166-delete">16.6 Delete</a></li>
-<li><a href="#167-selecttyp">16.7 SelectTYP</a></li>
-<li><a href="#168-createtyp">16.8 CreateTYP</a></li>
-<li><a href="#169-updatetyp">16.9 UpdateTYP</a></li>
-<li><a href="#1610-deletetyp">16.10 DeleteTYP</a></li>
-<li><a href="#1611-selecttocitem">16.11 SelectTOCItem</a></li>
-<li><a href="#1612-createtocitem">16.12 CreateTOCItem</a></li>
-<li><a href="#1613-updatetocitem">16.13 UpdateTOCItem</a></li>
-<li><a href="#1614-deletetocitem">16.14 DeleteTOCItem</a></li>
-<li><a href="#1615-appendtextbook">16.15 AppendTextbook</a></li>
-<li><a href="#1616-removetextbook">16.16 RemoveTextbook</a></li>
-<li><a href="#1617-updatetypifocntprotected">16.17 UpdateTYPIFOCNT(protected)</a></li>
-<li><a href="#1618-getinitstatusflagprotected">16.18 GetInitStatusFlag(protected)</a></li>
+<li><a href="#161-settablesprotected">16.1 SetTables(protected)</a></li>
+<li><a href="#162-select">16.2 Select</a></li>
+<li><a href="#163-create">16.3 Create</a></li>
+<li><a href="#164-update">16.4 Update</a></li>
+<li><a href="#165-delete">16.5 Delete</a></li>
+<li><a href="#166-selecttyp">16.6 SelectTYP</a></li>
+<li><a href="#167-createtyp">16.7 CreateTYP</a></li>
+<li><a href="#168-updatetyp">16.8 UpdateTYP</a></li>
+<li><a href="#169-deletetyp">16.9 DeleteTYP</a></li>
+<li><a href="#1610-updatetypifocntprotected">16.10 UpdateTYPIFOCNT(protected)</a></li>
 </ul>
 </li>
-<li><a href="#17-dbsmod_cus-extends-dbsmod">17. DBSMOD_CUS extends DBSMOD</a>
+<li><a href="#17-dbsmod_doc-extends-dbsmod">17. DBSMOD_DOC extends DBSMOD</a>
 <ul>
-<li><a href="#171-settablesprotected">17.1 SetTables(protected)</a></li>
-<li><a href="#172-select">17.2 Select</a></li>
-<li><a href="#173-create">17.3 Create</a></li>
-<li><a href="#174-update">17.4 Update</a></li>
-<li><a href="#175-delete">17.5 Delete</a></li>
-<li><a href="#176-selecttyp">17.6 SelectTYP</a></li>
-<li><a href="#177-createtyp">17.7 CreateTYP</a></li>
-<li><a href="#178-updatetyp">17.8 UpdateTYP</a></li>
-<li><a href="#179-deletetyp">17.9 DeleteTYP</a></li>
-<li><a href="#1710-updatetypifocntprotected">17.10 UpdateTYPIFOCNT(protected)</a></li>
+<li><a href="#171-properties">17.1 Properties</a></li>
+<li><a href="#172-settablesprotected">17.2 SetTables(protected)</a></li>
+<li><a href="#173-select">17.3 Select</a></li>
+<li><a href="#174-create">17.4 Create</a></li>
+<li><a href="#175-update">17.5 Update</a></li>
+<li><a href="#176-approve">17.6 Approve</a></li>
+<li><a href="#177-accumulatecnt">17.7 AccumulateCNT</a></li>
+<li><a href="#178-delete">17.8 Delete</a></li>
+<li><a href="#179-createdraftfromdoc">17.9 CreateDraftFromDOC</a></li>
+<li><a href="#1710-copytotable">17.10 CopyToTable</a></li>
+<li><a href="#1711-selecttyp">17.11 SelectTYP</a></li>
+<li><a href="#1712-createtyp">17.12 CreateTYP</a></li>
+<li><a href="#1713-updatetyp">17.13 UpdateTYP</a></li>
+<li><a href="#1714-deletetyp">17.14 DeleteTYP</a></li>
+<li><a href="#1715-updatetypifocntprotected">17.15 UpdateTYPIFOCNT(protected)</a></li>
+<li><a href="#1716-getinitstatusflagprotected">17.16 GetInitStatusFlag(protected)</a></li>
+<li><a href="#1717-getoridocfieldprotected">17.17 GetORIDOCField(protected)</a></li>
+<li><a href="#1718-appendmultilingualindex">17.18 AppendMultilingualIndex</a></li>
+<li><a href="#1719-removemultilingualindex">17.19 RemoveMultilingualIndex</a></li>
 </ul>
 </li>
-<li><a href="#18-dbsmod_doc-extends-dbsmod">18. DBSMOD_DOC extends DBSMOD</a>
+<li><a href="#18-dbsmod_doc_enus-extends-dbsmod_doc">18. DBSMOD_DOC_enUS extends DBSMOD_DOC</a>
 <ul>
-<li><a href="#181-properties">18.1 Properties</a></li>
-<li><a href="#182-settablesprotected">18.2 SetTables(protected)</a></li>
-<li><a href="#183-select">18.3 Select</a></li>
-<li><a href="#184-create">18.4 Create</a></li>
-<li><a href="#185-update">18.5 Update</a></li>
-<li><a href="#186-approve">18.6 Approve</a></li>
-<li><a href="#187-accumulatecnt">18.7 AccumulateCNT</a></li>
-<li><a href="#188-delete">18.8 Delete</a></li>
-<li><a href="#189-createdraftfromdoc">18.9 CreateDraftFromDOC</a></li>
-<li><a href="#1810-copytotable">18.10 CopyToTable</a></li>
-<li><a href="#1811-selecttyp">18.11 SelectTYP</a></li>
-<li><a href="#1812-createtyp">18.12 CreateTYP</a></li>
-<li><a href="#1813-updatetyp">18.13 UpdateTYP</a></li>
-<li><a href="#1814-deletetyp">18.14 DeleteTYP</a></li>
-<li><a href="#1815-updatetypifocntprotected">18.15 UpdateTYPIFOCNT(protected)</a></li>
-<li><a href="#1816-getinitstatusflagprotected">18.16 GetInitStatusFlag(protected)</a></li>
-<li><a href="#1817-getoridocfieldprotected">18.17 GetORIDOCField(protected)</a></li>
-<li><a href="#1818-appendmultilingualindex">18.18 AppendMultilingualIndex</a></li>
-<li><a href="#1819-removemultilingualindex">18.19 RemoveMultilingualIndex</a></li>
+<li><a href="#181-settablesprotected">18.1 SetTables(protected)</a></li>
 </ul>
 </li>
-<li><a href="#19-dbsmod_doc_enus-extends-dbsmod_doc">19. DBSMOD_DOC_enUS extends DBSMOD_DOC</a>
+<li><a href="#19-dbsmod_dscdoc-extends-dbsmod_doc">19. DBSMOD_DSCDOC extends DBSMOD_DOC</a>
 <ul>
 <li><a href="#191-settablesprotected">19.1 SetTables(protected)</a></li>
+<li><a href="#192-create">19.2 Create</a></li>
+<li><a href="#193-selecttopic">19.3 SelectTopic</a></li>
+<li><a href="#194-createtopic">19.4 CreateTopic</a></li>
+<li><a href="#195-updatetopic">19.5 UpdateTopic</a></li>
+<li><a href="#196-deletetopic">19.6 DeleteTopic</a></li>
+<li><a href="#197-selectreply">19.7 SelectReply</a></li>
+<li><a href="#198-createreply">19.8 CreateReply</a></li>
+<li><a href="#199-updatereply">19.9 UpdateReply</a></li>
+<li><a href="#1910-deletereply">19.10 DeleteReply</a></li>
+<li><a href="#1911-appendcourse">19.11 AppendCourse</a></li>
+<li><a href="#1912-removecourse">19.12 RemoveCourse</a></li>
 </ul>
 </li>
-<li><a href="#20-dbsmod_dscdoc-extends-dbsmod_doc">20. DBSMOD_DSCDOC extends DBSMOD_DOC</a>
+<li><a href="#20-dbsmod_file-extends-dbsmod">20. DBSMOD_File extends DBSMOD</a>
 <ul>
-<li><a href="#201-settablesprotected">20.1 SetTables(protected)</a></li>
-<li><a href="#202-create">20.2 Create</a></li>
-<li><a href="#203-selecttopic">20.3 SelectTopic</a></li>
-<li><a href="#204-createtopic">20.4 CreateTopic</a></li>
-<li><a href="#205-updatetopic">20.5 UpdateTopic</a></li>
-<li><a href="#206-deletetopic">20.6 DeleteTopic</a></li>
-<li><a href="#207-selectreply">20.7 SelectReply</a></li>
-<li><a href="#208-createreply">20.8 CreateReply</a></li>
-<li><a href="#209-updatereply">20.9 UpdateReply</a></li>
-<li><a href="#2010-deletereply">20.10 DeleteReply</a></li>
-<li><a href="#2011-appendcourse">20.11 AppendCourse</a></li>
-<li><a href="#2012-removecourse">20.12 RemoveCourse</a></li>
+<li><a href="#201-properties">20.1 Properties</a></li>
+<li><a href="#202-settablesprotected">20.2 SetTables(protected)</a></li>
+<li><a href="#203-select">20.3 Select</a></li>
+<li><a href="#204-create">20.4 Create</a></li>
+<li><a href="#205-update">20.5 Update</a></li>
+<li><a href="#206-delete">20.6 Delete</a></li>
+<li><a href="#207-setpermissionprotected">20.7 SetPermission(protected)</a></li>
+<li><a href="#208-setuserpermission">20.8 SetUserPermission</a></li>
+<li><a href="#209-setgrouppermission">20.9 SetGroupPermission</a></li>
+<li><a href="#2010-altersinglepermissionprotected">20.10 AlterSinglePermission(protected)</a></li>
+<li><a href="#2011-alteruserreadpermission">20.11 AlterUserReadPermission</a></li>
+<li><a href="#2012-altergroupreadpermission">20.12 AlterGroupReadPermission</a></li>
+<li><a href="#2013-alteruserwritepermission">20.13 AlterUserWritePermission</a></li>
+<li><a href="#2014-altergroupwritepermission">20.14 AlterGroupWritePermission</a></li>
+<li><a href="#2015-alteruserdeletepermission">20.15 AlterUserDeletePermission</a></li>
+<li><a href="#2016-altergroupdeletepermission">20.16 AlterGroupDeletePermission</a></li>
 </ul>
 </li>
-<li><a href="#21-dbsmod_file-extends-dbsmod">21. DBSMOD_File extends DBSMOD</a>
+<li><a href="#21-dbsmod_giftvoh-extends-dbsmod">21. DBSMOD_GiftVOH extends DBSMOD</a>
 <ul>
-<li><a href="#211-properties">21.1 Properties</a></li>
-<li><a href="#212-settablesprotected">21.2 SetTables(protected)</a></li>
-<li><a href="#213-select">21.3 Select</a></li>
-<li><a href="#214-create">21.4 Create</a></li>
-<li><a href="#215-update">21.5 Update</a></li>
-<li><a href="#216-delete">21.6 Delete</a></li>
-<li><a href="#217-setpermissionprotected">21.7 SetPermission(protected)</a></li>
-<li><a href="#218-setuserpermission">21.8 SetUserPermission</a></li>
-<li><a href="#219-setgrouppermission">21.9 SetGroupPermission</a></li>
-<li><a href="#2110-altersinglepermissionprotected">21.10 AlterSinglePermission(protected)</a></li>
-<li><a href="#2111-alteruserreadpermission">21.11 AlterUserReadPermission</a></li>
-<li><a href="#2112-altergroupreadpermission">21.12 AlterGroupReadPermission</a></li>
-<li><a href="#2113-alteruserwritepermission">21.13 AlterUserWritePermission</a></li>
-<li><a href="#2114-altergroupwritepermission">21.14 AlterGroupWritePermission</a></li>
-<li><a href="#2115-alteruserdeletepermission">21.15 AlterUserDeletePermission</a></li>
-<li><a href="#2116-altergroupdeletepermission">21.16 AlterGroupDeletePermission</a></li>
+<li><a href="#211-settablesprotected">21.1 SetTables(protected)</a></li>
+<li><a href="#212-select">21.2 Select</a></li>
+<li><a href="#213-create">21.3 Create</a></li>
+<li><a href="#214-update">21.4 Update</a></li>
+<li><a href="#215-delete">21.5 Delete</a></li>
+<li><a href="#216-selecttyp">21.6 SelectTYP</a></li>
+<li><a href="#217-createtyp">21.7 CreateTYP</a></li>
+<li><a href="#218-updatetyp">21.8 UpdateTYP</a></li>
+<li><a href="#219-deletetyp">21.9 DeleteTYP</a></li>
+<li><a href="#2110-selectcode">21.10 SelectCode</a></li>
+<li><a href="#2111-createcode">21.11 CreateCode</a></li>
+<li><a href="#2112-updatecode">21.12 UpdateCode</a></li>
+<li><a href="#2113-deletecode">21.13 DeleteCode</a></li>
+<li><a href="#2114-activategiftvoh">21.14 ActivateGiftVOH</a></li>
+<li><a href="#2115-updatetypifocntprotected">21.15 UpdateTYPIFOCNT(protected)</a></li>
 </ul>
 </li>
 <li><a href="#22-dbsmod_goods-extends-dbsmod">22. DBSMOD_Goods extends DBSMOD</a>
@@ -548,10 +548,8 @@ main code {
 <li><a href="#355-create">35.5 Create</a></li>
 <li><a href="#356-update">35.6 Update</a></li>
 <li><a href="#357-delete">35.7 Delete</a></li>
-<li><a href="#358-bindstatusevent">35.8 BindStatusEvent</a></li>
-<li><a href="#359-getinitstatusflagprotected">35.9 GetInitStatusFlag(protected)</a></li>
-<li><a href="#3510-firestatuseventprotected">35.10 FireStatusEvent(protected)</a></li>
-<li><a href="#3511-revokeexecutioncountprotected">35.11 RevokeExecutionCount(protected)</a></li>
+<li><a href="#358-getinitstatusflagprotected">35.8 GetInitStatusFlag(protected)</a></li>
+<li><a href="#359-revokeexecutioncountprotected">35.9 RevokeExecutionCount(protected)</a></li>
 </ul>
 </li>
 <li><a href="#36-dbsmod_textbook-extends-dbsmod">36. DBSMOD_Textbook extends DBSMOD</a>
@@ -2472,371 +2470,8 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h1>15. DBSMOD_Coupon extends DBSMOD</h1>
-<h2>15.1 SetTables(protected)</h2>
-<pre><code class="language-php">protected function SetTables()
-</code></pre>
-<p>設定預設資料表參數 (實作抽象方法)</p>
-<p><strong>回傳</strong></p>
-<p><code>array</code></p>
-<h2>15.2 Select</h2>
-<pre><code class="language-php">public function Select($ID, $Field_Array = array())
-</code></pre>
-<p>查詢單筆資料</p>
-<table>
-<thead>
-<tr>
-<th align="left">Param</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>$ID</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">CouponID</td>
-</tr>
-<tr>
-<td align="left"><code>$Field_Array</code></td>
-<td align="left"><code>array</code></td>
-<td align="left">查詢的資料表欄位名稱陣列</td>
-</tr>
-</tbody>
-</table>
-<p><strong>回傳</strong></p>
-<p><code>array</code>|<code>false</code></p>
-<h2>15.3 Create</h2>
-<pre><code class="language-php">public function Create($R_Data)
-</code></pre>
-<p>新增資料</p>
-<table>
-<thead>
-<tr>
-<th align="left">Param</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>$R_Data</code></td>
-<td align="left"><code>array</code></td>
-<td align="left">Coupon資料表欄位名稱與資料的映射</td>
-</tr>
-</tbody>
-</table>
-<p><strong>回傳</strong></p>
-<p><code>array</code>|<code>false</code></p>
-<h2>15.4 Update</h2>
-<pre><code class="language-php">public function Update($ID, $R_Data)
-</code></pre>
-<p>更新資料</p>
-<table>
-<thead>
-<tr>
-<th align="left">Param</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>$ID</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">CouponID</td>
-</tr>
-<tr>
-<td align="left"><code>$R_Data</code></td>
-<td align="left"><code>array</code></td>
-<td align="left">Coupon資料表欄位名稱與資料的映射</td>
-</tr>
-</tbody>
-</table>
-<p><strong>回傳</strong></p>
-<p><code>array</code>|<code>false</code></p>
-<h2>15.5 Delete</h2>
-<pre><code class="language-php">public function Delete($ID)
-</code></pre>
-<p>刪除資料</p>
-<table>
-<thead>
-<tr>
-<th align="left">Param</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>$ID</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">CouponID</td>
-</tr>
-</tbody>
-</table>
-<p><strong>回傳</strong></p>
-<p><code>bool</code></p>
-<h2>15.6 SelectTYP</h2>
-<pre><code class="language-php">public function SelectTYP($ID, $Field_Array = array())
-</code></pre>
-<p>查詢單筆 CouponTYP</p>
-<table>
-<thead>
-<tr>
-<th align="left">Param</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>$ID</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">CouponTYPID</td>
-</tr>
-<tr>
-<td align="left"><code>$Field_Array</code></td>
-<td align="left"><code>array</code></td>
-<td align="left">查詢的資料表欄位名稱陣列</td>
-</tr>
-</tbody>
-</table>
-<p><strong>回傳</strong></p>
-<p><code>array</code>|<code>false</code></p>
-<h2>15.7 CreateTYP</h2>
-<pre><code class="language-php">public function CreateTYP($R_Data)
-</code></pre>
-<p>新增資料 CouponTYP</p>
-<table>
-<thead>
-<tr>
-<th align="left">Param</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>$R_Data</code></td>
-<td align="left"><code>array</code></td>
-<td align="left">CouponTYP資料表欄位名稱與資料的映射</td>
-</tr>
-</tbody>
-</table>
-<p><strong>回傳</strong></p>
-<p><code>array</code>|<code>false</code></p>
-<h2>15.8 UpdateTYP</h2>
-<pre><code class="language-php">public function UpdateTYP($ID, $R_Data)
-</code></pre>
-<p>更新資料 CouponTYP</p>
-<table>
-<thead>
-<tr>
-<th align="left">Param</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>$ID</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">CouponTYPID</td>
-</tr>
-<tr>
-<td align="left"><code>$R_Data</code></td>
-<td align="left"><code>array</code></td>
-<td align="left">CouponTYP資料表欄位名稱與資料的映射</td>
-</tr>
-</tbody>
-</table>
-<p><strong>回傳</strong></p>
-<p><code>array</code>|<code>false</code></p>
-<h2>15.9 DeleteTYP</h2>
-<pre><code class="language-php">public function DeleteTYP($ID)
-</code></pre>
-<p>刪除資料 CouponTYP</p>
-<table>
-<thead>
-<tr>
-<th align="left">Param</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>$ID</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">CouponTYPID</td>
-</tr>
-</tbody>
-</table>
-<p><strong>回傳</strong></p>
-<p><code>bool</code></p>
-<h2>15.10 SelectCode</h2>
-<pre><code class="language-php">public function SelectCode($ID, $Field_Array = array())
-</code></pre>
-<p>查詢單筆 CouponCode</p>
-<table>
-<thead>
-<tr>
-<th align="left">Param</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>$ID</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">CouponCodeID</td>
-</tr>
-<tr>
-<td align="left"><code>$Field_Array</code></td>
-<td align="left"><code>array</code></td>
-<td align="left">查詢的資料表欄位名稱陣列</td>
-</tr>
-</tbody>
-</table>
-<p><strong>回傳</strong></p>
-<p><code>array</code>|<code>false</code></p>
-<h2>15.11 CreateCode</h2>
-<pre><code class="language-php">public function CreateCode($R_Data)
-</code></pre>
-<p>新增資料 CouponCode</p>
-<table>
-<thead>
-<tr>
-<th align="left">Param</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>$R_Data</code></td>
-<td align="left"><code>array</code></td>
-<td align="left">CouponCode資料表欄位名稱與資料的映射</td>
-</tr>
-</tbody>
-</table>
-<p><strong>回傳</strong></p>
-<p><code>array</code>|<code>false</code></p>
-<h2>15.12 UpdateCode</h2>
-<pre><code class="language-php">public function UpdateCode($ID, $R_Data)
-</code></pre>
-<p>更新資料 CouponCode</p>
-<table>
-<thead>
-<tr>
-<th align="left">Param</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>$ID</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">CouponCodeID</td>
-</tr>
-<tr>
-<td align="left"><code>$R_Data</code></td>
-<td align="left"><code>array</code></td>
-<td align="left">CouponCode資料表欄位名稱與資料的映射</td>
-</tr>
-</tbody>
-</table>
-<p><strong>回傳</strong></p>
-<p><code>array</code>|<code>false</code></p>
-<h2>15.13 DeleteCode</h2>
-<pre><code class="language-php">public function DeleteCode($ID)
-</code></pre>
-<p>刪除資料 CouponCode</p>
-<table>
-<thead>
-<tr>
-<th align="left">Param</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>$ID</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">CouponCodeID</td>
-</tr>
-</tbody>
-</table>
-<p><strong>回傳</strong></p>
-<p><code>bool</code></p>
-<h2>15.14 ExchangeCoupon</h2>
-<pre><code class="language-php">public function ExchangeCoupon($CouponID, $UserID, $Note = '', $DateTime = null)
-</code></pre>
-<p>兌換 Coupon；若成功，會同時更新 CouponCode、CouponEHG、Coupon 資料表</p>
-<table>
-<thead>
-<tr>
-<th align="left">Param</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>$CouponID</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">要兌換的 CouponID</td>
-</tr>
-<tr>
-<td align="left"><code>$UserID</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">兌換者的 UserID</td>
-</tr>
-<tr>
-<td align="left"><code>$Note</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">非必填，兌換備註，預設為空字串</td>
-</tr>
-<tr>
-<td align="left"><code>$DateTime</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">非必填，兌換時間，預設為當前時間</td>
-</tr>
-</tbody>
-</table>
-<h2>15.15 UpdateTYPIFOCNT(protected)</h2>
-<pre><code class="language-php">protected function UpdateTYPIFOCNT($ID, $Count = 1)
-</code></pre>
-<p>更新資料計數</p>
-<table>
-<thead>
-<tr>
-<th align="left">Param</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>$ID</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">CouponTYPID</td>
-</tr>
-<tr>
-<td align="left"><code>$Count</code></td>
-<td align="left"><code>integer</code></td>
-<td align="left">計數待相加的數字</td>
-</tr>
-</tbody>
-</table>
-<p><strong>回傳</strong></p>
-<p><code>int</code>|<code>bool</code></p>
-<h1>16. DBSMOD_Course extends DBSMOD</h1>
-<h2>16.1 Properties</h2>
+<h1>15. DBSMOD_Course extends DBSMOD</h1>
+<h2>15.1 Properties</h2>
 <table>
 <thead>
 <tr>
@@ -2863,13 +2498,13 @@ main code {
 </tr>
 </tbody>
 </table>
-<h2>16.2 SetTables(protected)</h2>
+<h2>15.2 SetTables(protected)</h2>
 <pre><code class="language-php">protected function SetTables()
 </code></pre>
 <p>設定預設資料表參數 (實作抽象方法)</p>
 <p><strong>回傳</strong></p>
 <p><code>array</code></p>
-<h2>16.3 Select</h2>
+<h2>15.3 Select</h2>
 <pre><code class="language-php">public function Select($ID, $Field_Array = array())
 </code></pre>
 <p>查詢單筆資料</p>
@@ -2896,7 +2531,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>16.4 Create</h2>
+<h2>15.4 Create</h2>
 <pre><code class="language-php">public function Create($R_Data)
 </code></pre>
 <p>新增資料</p>
@@ -2918,7 +2553,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>16.5 Update</h2>
+<h2>15.5 Update</h2>
 <pre><code class="language-php">public function Update($ID, $R_Data)
 </code></pre>
 <p>更新資料</p>
@@ -2945,7 +2580,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>16.6 Delete</h2>
+<h2>15.6 Delete</h2>
 <pre><code class="language-php">public function Delete($ID)
 </code></pre>
 <p>刪除課程資料；一併刪除教科書的關聯資料</p>
@@ -2967,7 +2602,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h2>16.7 SelectTYP</h2>
+<h2>15.7 SelectTYP</h2>
 <pre><code class="language-php">public function SelectTYP($ID, $Field_Array = array())
 </code></pre>
 <p>查詢單筆 CourseTYP</p>
@@ -2994,7 +2629,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>16.8 CreateTYP</h2>
+<h2>15.8 CreateTYP</h2>
 <pre><code class="language-php">public function CreateTYP($R_Data)
 </code></pre>
 <p>新增資料 CourseTYP</p>
@@ -3016,7 +2651,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>16.9 UpdateTYP</h2>
+<h2>15.9 UpdateTYP</h2>
 <pre><code class="language-php">public function UpdateTYP($ID, $R_Data)
 </code></pre>
 <p>更新資料 CourseTYP</p>
@@ -3043,7 +2678,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>16.10 DeleteTYP</h2>
+<h2>15.10 DeleteTYP</h2>
 <pre><code class="language-php">public function DeleteTYP($ID)
 </code></pre>
 <p>刪除資料 CourseTYP</p>
@@ -3065,7 +2700,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h2>16.11 SelectTOCItem</h2>
+<h2>15.11 SelectTOCItem</h2>
 <pre><code class="language-php">public function SelectTOCItem($ID, $Field_Array = array())
 </code></pre>
 <p>取得課程目錄項目</p>
@@ -3092,7 +2727,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>16.12 CreateTOCItem</h2>
+<h2>15.12 CreateTOCItem</h2>
 <pre><code class="language-php">public function CreateTOCItem($R_Data, $PreviousItemID = null)
 </code></pre>
 <p>建立課程目錄項目，並更新同課程中其他章節的序號</p>
@@ -3119,7 +2754,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>16.13 UpdateTOCItem</h2>
+<h2>15.13 UpdateTOCItem</h2>
 <pre><code class="language-php">public function UpdateTOCItem($ID, $R_Data)
 </code></pre>
 <p>更新課程目錄項目，並更新同課程中其他章節的序號</p>
@@ -3146,7 +2781,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>16.14 DeleteTOCItem</h2>
+<h2>15.14 DeleteTOCItem</h2>
 <pre><code class="language-php">public function DeleteTOCItem($ID)
 </code></pre>
 <p>刪除課程目錄項目，並更新同課程中其他章節的序號</p>
@@ -3168,7 +2803,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h2>16.15 AppendTextbook</h2>
+<h2>15.15 AppendTextbook</h2>
 <pre><code class="language-php">public function AppendTextbook($CourseID, $TextbookID)
 </code></pre>
 <p>新增教科書與課程關聯</p>
@@ -3195,7 +2830,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h2>16.16 RemoveTextbook</h2>
+<h2>15.16 RemoveTextbook</h2>
 <pre><code class="language-php">public function RemoveTextbook($CourseID, $TextbookID)
 </code></pre>
 <p>移除課程與教科書的關聯</p>
@@ -3222,7 +2857,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h2>16.17 UpdateTYPIFOCNT(protected)</h2>
+<h2>15.17 UpdateTYPIFOCNT(protected)</h2>
 <pre><code class="language-php">protected function UpdateTYPIFOCNT($ID, $Count = 1)
 </code></pre>
 <p>更新資料計數</p>
@@ -3249,20 +2884,20 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>int</code>|<code>bool</code></p>
-<h2>16.18 GetInitStatusFlag(protected)</h2>
+<h2>15.18 GetInitStatusFlag(protected)</h2>
 <pre><code class="language-php">protected function GetInitStatusFlag()
 </code></pre>
 <p>取得初始狀態旗標字串</p>
 <p><strong>回傳</strong></p>
 <p><code>string</code></p>
-<h1>17. DBSMOD_CUS extends DBSMOD</h1>
-<h2>17.1 SetTables(protected)</h2>
+<h1>16. DBSMOD_CUS extends DBSMOD</h1>
+<h2>16.1 SetTables(protected)</h2>
 <pre><code class="language-php">protected function SetTables()
 </code></pre>
 <p>設定預設資料表參數 (實作抽象方法)</p>
 <p><strong>回傳</strong></p>
 <p><code>array</code></p>
-<h2>17.2 Select</h2>
+<h2>16.2 Select</h2>
 <pre><code class="language-php">public function Select($ID, $Field_Array = array())
 </code></pre>
 <p>查詢單筆資料</p>
@@ -3289,7 +2924,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>17.3 Create</h2>
+<h2>16.3 Create</h2>
 <pre><code class="language-php">public function Create($R_Data)
 </code></pre>
 <p>新增資料</p>
@@ -3311,7 +2946,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>17.4 Update</h2>
+<h2>16.4 Update</h2>
 <pre><code class="language-php">public function Update($ID, $R_Data)
 </code></pre>
 <p>更新資料</p>
@@ -3338,7 +2973,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>17.5 Delete</h2>
+<h2>16.5 Delete</h2>
 <pre><code class="language-php">public function Delete($ID)
 </code></pre>
 <p>刪除資料</p>
@@ -3360,7 +2995,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h2>17.6 SelectTYP</h2>
+<h2>16.6 SelectTYP</h2>
 <pre><code class="language-php">public function SelectTYP($ID, $Field_Array = array())
 </code></pre>
 <p>查詢單筆 CUSIFOTYP</p>
@@ -3387,7 +3022,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>17.7 CreateTYP</h2>
+<h2>16.7 CreateTYP</h2>
 <pre><code class="language-php">public function CreateTYP($R_Data)
 </code></pre>
 <p>新增資料 CUSIFOTYP</p>
@@ -3409,7 +3044,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>17.8 UpdateTYP</h2>
+<h2>16.8 UpdateTYP</h2>
 <pre><code class="language-php">public function UpdateTYP($ID, $R_Data)
 </code></pre>
 <p>更新資料 CUSIFOTYP</p>
@@ -3436,7 +3071,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>17.9 DeleteTYP</h2>
+<h2>16.9 DeleteTYP</h2>
 <pre><code class="language-php">public function DeleteTYP($ID)
 </code></pre>
 <p>刪除資料 CUSIFOTYP</p>
@@ -3458,7 +3093,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h2>17.10 UpdateTYPIFOCNT(protected)</h2>
+<h2>16.10 UpdateTYPIFOCNT(protected)</h2>
 <pre><code class="language-php">protected function UpdateTYPIFOCNT($ID, $Count = 1)
 </code></pre>
 <p>更新資料計數</p>
@@ -3485,8 +3120,8 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>int</code>|<code>bool</code></p>
-<h1>18. DBSMOD_DOC extends DBSMOD</h1>
-<h2>18.1 Properties</h2>
+<h1>17. DBSMOD_DOC extends DBSMOD</h1>
+<h2>17.1 Properties</h2>
 <table>
 <thead>
 <tr>
@@ -3528,13 +3163,13 @@ main code {
 </tr>
 </tbody>
 </table>
-<h2>18.2 SetTables(protected)</h2>
+<h2>17.2 SetTables(protected)</h2>
 <pre><code class="language-php">protected function SetTables()
 </code></pre>
 <p>設定預設資料表參數 (實作抽象方法)，並寫入 $this-&gt;TYPTable, $this-&gt;TYPTablePK</p>
 <p><strong>回傳</strong></p>
 <p><code>array</code></p>
-<h2>18.3 Select</h2>
+<h2>17.3 Select</h2>
 <pre><code class="language-php">public function Select($ID, $Field_Array = array())
 </code></pre>
 <p>查詢單筆資料</p>
@@ -3561,7 +3196,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>18.4 Create</h2>
+<h2>17.4 Create</h2>
 <pre><code class="language-php">public function Create($R_Data)
 </code></pre>
 <p>新增資料</p>
@@ -3583,7 +3218,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>18.5 Update</h2>
+<h2>17.5 Update</h2>
 <pre><code class="language-php">public function Update($ID, $R_Data, $AccumulateModifyCNT = false)
 </code></pre>
 <p>更新資料</p>
@@ -3615,7 +3250,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>18.6 Approve</h2>
+<h2>17.6 Approve</h2>
 <pre><code class="language-php">public function Approve($DraftID)
 </code></pre>
 <p>核准文件</p>
@@ -3637,7 +3272,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h2>18.7 AccumulateCNT</h2>
+<h2>17.7 AccumulateCNT</h2>
 <pre><code class="language-php">public function AccumulateCNT($ID, $Field, $Count = 1)
 </code></pre>
 <p>累計文件計數 ReadCNT|RSPCNT|TotalRSPCNT|LikeCNT|ShareCNT|CMTCNT|ModifyCNT</p>
@@ -3669,7 +3304,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h2>18.8 Delete</h2>
+<h2>17.8 Delete</h2>
 <pre><code class="language-php">public function Delete($ID)
 </code></pre>
 <p>刪除文件資料；若刪除的文件為草稿，則一併變更原文件狀態旗標；若刪除的文件為發佈文件，則一併刪除草稿</p>
@@ -3691,7 +3326,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h2>18.9 CreateDraftFromDOC</h2>
+<h2>17.9 CreateDraftFromDOC</h2>
 <pre><code class="language-php">public function CreateDraftFromDOC($ID, $R_Data)
 </code></pre>
 <p>建立既有文件的草稿，並將原文件標註狀態為編輯中</p>
@@ -3718,7 +3353,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code> 建立草稿成功時回傳包含主鍵及 <code>SERNO</code> 的關聯式陣列</p>
-<h2>18.10 CopyToTable</h2>
+<h2>17.10 CopyToTable</h2>
 <pre><code class="language-php">public function CopyToTable($ID, $Table, $TablePK, $Field_Array = array())
 </code></pre>
 <p>複製文件資料到指定資料表</p>
@@ -3755,7 +3390,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code> 複製成功時回傳主鍵的關聯式陣列</p>
-<h2>18.11 SelectTYP</h2>
+<h2>17.11 SelectTYP</h2>
 <pre><code class="language-php">public function SelectTYP($ID, $Field_Array = array())
 </code></pre>
 <p>查詢單筆 REFDOCTYP</p>
@@ -3782,7 +3417,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>18.12 CreateTYP</h2>
+<h2>17.12 CreateTYP</h2>
 <pre><code class="language-php">public function CreateTYP($R_Data)
 </code></pre>
 <p>新增資料 REFDOCTYP</p>
@@ -3804,7 +3439,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>18.13 UpdateTYP</h2>
+<h2>17.13 UpdateTYP</h2>
 <pre><code class="language-php">public function UpdateTYP($ID, $R_Data)
 </code></pre>
 <p>更新資料 REFDOCTYP</p>
@@ -3831,7 +3466,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>18.14 DeleteTYP</h2>
+<h2>17.14 DeleteTYP</h2>
 <pre><code class="language-php">public function DeleteTYP($ID)
 </code></pre>
 <p>刪除資料 REFDOCTYP</p>
@@ -3853,7 +3488,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h2>18.15 UpdateTYPIFOCNT(protected)</h2>
+<h2>17.15 UpdateTYPIFOCNT(protected)</h2>
 <pre><code class="language-php">protected function UpdateTYPIFOCNT($ID, $Count = 1)
 </code></pre>
 <p>更新資料計數</p>
@@ -3880,19 +3515,19 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>int</code>|<code>bool</code></p>
-<h2>18.16 GetInitStatusFlag(protected)</h2>
+<h2>17.16 GetInitStatusFlag(protected)</h2>
 <pre><code class="language-php">protected function GetInitStatusFlag()
 </code></pre>
 <p>取得初始狀態旗標字串</p>
 <p><strong>回傳</strong></p>
 <p><code>string</code></p>
-<h2>18.17 GetORIDOCField(protected)</h2>
+<h2>17.17 GetORIDOCField(protected)</h2>
 <pre><code class="language-php">protected function GetORIDOCField() {
 </code></pre>
 <p>取得記錄原始文件ID的資料表欄位名稱，如 <code>ORIREFDOCID</code></p>
 <p><strong>回傳</strong></p>
 <p><code>string</code></p>
-<h2>18.18 AppendMultilingualIndex</h2>
+<h2>17.18 AppendMultilingualIndex</h2>
 <pre><code class="language-php">public function AppendMultilingualIndex($ID, $Language, $ReferenceID = '', $ReferenceLanguage = '')
 </code></pre>
 <p>附加語系關聯</p>
@@ -3929,7 +3564,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h2>18.19 RemoveMultilingualIndex</h2>
+<h2>17.19 RemoveMultilingualIndex</h2>
 <pre><code class="language-php">public function RemoveMultilingualIndex($ID, $Language)
 </code></pre>
 <p>移除語系關聯</p>
@@ -3956,21 +3591,21 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h1>19. DBSMOD_DOC_enUS extends DBSMOD_DOC</h1>
-<h2>19.1 SetTables(protected)</h2>
+<h1>18. DBSMOD_DOC_enUS extends DBSMOD_DOC</h1>
+<h2>18.1 SetTables(protected)</h2>
 <pre><code class="language-php">protected function SetTables()
 </code></pre>
 <p>設定預設資料表參數 (實作抽象方法)，並寫入 $this-&gt;TYPTable, $this-&gt;TYPTablePK</p>
 <p><strong>回傳</strong></p>
 <p><code>array</code></p>
-<h1>20. DBSMOD_DSCDOC extends DBSMOD_DOC</h1>
-<h2>20.1 SetTables(protected)</h2>
+<h1>19. DBSMOD_DSCDOC extends DBSMOD_DOC</h1>
+<h2>19.1 SetTables(protected)</h2>
 <pre><code class="language-php">protected function SetTables()
 </code></pre>
 <p>設定預設資料表參數 (實作抽象方法)</p>
 <p><strong>回傳</strong></p>
 <p><code>array</code></p>
-<h2>20.2 Create</h2>
+<h2>19.2 Create</h2>
 <pre><code class="language-php">public function Create($R_Data)
 </code></pre>
 <p>新增資料</p>
@@ -3992,7 +3627,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>20.3 SelectTopic</h2>
+<h2>19.3 SelectTopic</h2>
 <pre><code class="language-php">public function SelectTopic($ID, $Field_Array = array())
 </code></pre>
 <p>取得討論主題</p>
@@ -4019,7 +3654,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>20.4 CreateTopic</h2>
+<h2>19.4 CreateTopic</h2>
 <pre><code class="language-php">public function CreateTopic($R_Data)
 </code></pre>
 <p>建立討論主題資料</p>
@@ -4041,7 +3676,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>20.5 UpdateTopic</h2>
+<h2>19.5 UpdateTopic</h2>
 <pre><code class="language-php">public function UpdateTopic($ID, $R_Data)
 </code></pre>
 <p>更新討論主題資料</p>
@@ -4068,7 +3703,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>20.6 DeleteTopic</h2>
+<h2>19.6 DeleteTopic</h2>
 <pre><code class="language-php">public function DeleteTopic($ID)
 </code></pre>
 <p>刪除討論主題資料</p>
@@ -4090,7 +3725,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h2>20.7 SelectReply</h2>
+<h2>19.7 SelectReply</h2>
 <pre><code class="language-php">public function SelectReply($ID, $Field_Array = array())
 </code></pre>
 <p>取得討論回覆</p>
@@ -4117,7 +3752,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>20.8 CreateReply</h2>
+<h2>19.8 CreateReply</h2>
 <pre><code class="language-php">public function CreateReply($R_Data)
 </code></pre>
 <p>建立討論回覆資料</p>
@@ -4139,7 +3774,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>20.9 UpdateReply</h2>
+<h2>19.9 UpdateReply</h2>
 <pre><code class="language-php">public function UpdateReply($ID, $R_Data)
 </code></pre>
 <p>更新討論回覆資料</p>
@@ -4166,7 +3801,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>20.10 DeleteReply</h2>
+<h2>19.10 DeleteReply</h2>
 <pre><code class="language-php">public function DeleteReply($ID)
 </code></pre>
 <p>刪除討論回覆資料</p>
@@ -4188,7 +3823,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h2>20.11 AppendCourse</h2>
+<h2>19.11 AppendCourse</h2>
 <pre><code class="language-php">public function AppendCourse($DSCDOCID, $CourseID)
 </code></pre>
 <p>新增課程與討論文件、討論主題關聯</p>
@@ -4215,7 +3850,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h2>20.12 RemoveCourse</h2>
+<h2>19.12 RemoveCourse</h2>
 <pre><code class="language-php">public function RemoveCourse($DSCDOCID, $CourseID)
 </code></pre>
 <p>移除課程與討論文件、討論主題關聯</p>
@@ -4242,8 +3877,8 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h1>21. DBSMOD_File extends DBSMOD</h1>
-<h2>21.1 Properties</h2>
+<h1>20. DBSMOD_File extends DBSMOD</h1>
+<h2>20.1 Properties</h2>
 <table>
 <thead>
 <tr>
@@ -4260,13 +3895,13 @@ main code {
 </tr>
 </tbody>
 </table>
-<h2>21.2 SetTables(protected)</h2>
+<h2>20.2 SetTables(protected)</h2>
 <pre><code class="language-php">protected function SetTables()
 </code></pre>
 <p>設定預設資料表參數 (實作抽象方法)</p>
 <p><strong>回傳</strong></p>
 <p><code>array</code></p>
-<h2>21.3 Select</h2>
+<h2>20.3 Select</h2>
 <pre><code class="language-php">public function Select($ID, $Field_Array = array())
 </code></pre>
 <p>查詢單筆資料</p>
@@ -4293,7 +3928,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>21.4 Create</h2>
+<h2>20.4 Create</h2>
 <pre><code class="language-php">public function Create($R_Data)
 </code></pre>
 <p>新增資料</p>
@@ -4315,7 +3950,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>21.5 Update</h2>
+<h2>20.5 Update</h2>
 <pre><code class="language-php">public function Update($ID, $R_Data)
 </code></pre>
 <p>更新資料</p>
@@ -4342,7 +3977,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>array</code>|<code>false</code></p>
-<h2>21.6 Delete</h2>
+<h2>20.6 Delete</h2>
 <pre><code class="language-php">public function Delete($ID)
 </code></pre>
 <p>刪除資料</p>
@@ -4364,7 +3999,7 @@ main code {
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h2>21.7 SetPermission(protected)</h2>
+<h2>20.7 SetPermission(protected)</h2>
 <pre><code class="language-php">protected function SetPermission($Fields, $ID, $AgentID, $Scope = FILE_PERMISSION_ALL)
 </code></pre>
 <p>設定用戶或用戶群組對檔案的權限<br />
@@ -4412,7 +4047,7 @@ FILE_PERMISSION_ALL =&gt; 7</p>
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code> <code>true</code>: 成功，<code>false</code>: 失敗</p>
-<h2>21.8 SetUserPermission</h2>
+<h2>20.8 SetUserPermission</h2>
 <pre><code class="language-php">public function SetUserPermission($ID, $UserID, $Scope = FILE_PERMISSION_ALL)
 </code></pre>
 <p>設定用戶對檔案的權限<br />
@@ -4455,7 +4090,7 @@ FILE_PERMISSION_ALL =&gt; 7</p>
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code> <code>true</code>: 成功，<code>false</code>: 失敗</p>
-<h2>21.9 SetGroupPermission</h2>
+<h2>20.9 SetGroupPermission</h2>
 <pre><code class="language-php">public function SetGroupPermission($ID, $UserGRPID, $Scope = FILE_PERMISSION_ALL)
 </code></pre>
 <p>設定用戶群組對檔案的權限<br />
@@ -4498,7 +4133,7 @@ FILE_PERMISSION_ALL =&gt; 7</p>
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code> <code>true</code>: 成功，<code>false</code>: 失敗</p>
-<h2>21.10 AlterSinglePermission(protected)</h2>
+<h2>20.10 AlterSinglePermission(protected)</h2>
 <pre><code class="language-php">protected function AlterSinglePermission($Field, $ID, $AgentID, $Allow)
 </code></pre>
 <p>設定用戶或用戶群組對檔案的單一權限</p>
@@ -4535,7 +4170,7 @@ FILE_PERMISSION_ALL =&gt; 7</p>
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code> <code>true</code>: 成功，<code>false</code>: 失敗</p>
-<h2>21.11 AlterUserReadPermission</h2>
+<h2>20.11 AlterUserReadPermission</h2>
 <pre><code class="language-php">public function AlterUserReadPermission($ID, $UserID, $Allow)
 </code></pre>
 <p>設定用戶對檔案的讀取權限，不影響其他權限</p>
@@ -4567,7 +4202,7 @@ FILE_PERMISSION_ALL =&gt; 7</p>
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code> <code>true</code>: 成功，<code>false</code>: 失敗</p>
-<h2>21.12 AlterGroupReadPermission</h2>
+<h2>20.12 AlterGroupReadPermission</h2>
 <pre><code class="language-php">public function AlterGroupReadPermission($ID, $UserGRPID, $Allow)
 </code></pre>
 <p>設定用戶群組對檔案的讀取權限，不影響其他權限</p>
@@ -4599,7 +4234,7 @@ FILE_PERMISSION_ALL =&gt; 7</p>
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code> <code>true</code>: 成功，<code>false</code>: 失敗</p>
-<h2>21.13 AlterUserWritePermission</h2>
+<h2>20.13 AlterUserWritePermission</h2>
 <pre><code class="language-php">public function AlterUserWritePermission($ID, $UserID, $Allow)
 </code></pre>
 <p>設定用戶對檔案的寫入權限，不影響其他權限</p>
@@ -4631,7 +4266,7 @@ FILE_PERMISSION_ALL =&gt; 7</p>
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code> <code>true</code>: 成功，<code>false</code>: 失敗</p>
-<h2>21.14 AlterGroupWritePermission</h2>
+<h2>20.14 AlterGroupWritePermission</h2>
 <pre><code class="language-php">public function AlterGroupWritePermission($ID, $UserGRPID, $Allow)
 </code></pre>
 <p>設定用戶對檔案的寫入權限，不影響其他權限</p>
@@ -4663,7 +4298,7 @@ FILE_PERMISSION_ALL =&gt; 7</p>
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code> <code>true</code>: 成功，<code>false</code>: 失敗</p>
-<h2>21.15 AlterUserDeletePermission</h2>
+<h2>20.15 AlterUserDeletePermission</h2>
 <pre><code class="language-php">public function AlterUserDeletePermission($ID, $UserID, $Allow)
 </code></pre>
 <p>設定用戶對檔案的刪除權限，不影響其他權限</p>
@@ -4695,7 +4330,7 @@ FILE_PERMISSION_ALL =&gt; 7</p>
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code> <code>true</code>: 成功，<code>false</code>: 失敗</p>
-<h2>21.16 AlterGroupDeletePermission</h2>
+<h2>20.16 AlterGroupDeletePermission</h2>
 <pre><code class="language-php">public function AlterGroupDeletePermission($ID, $UserGRPID, $Allow)
 </code></pre>
 <p>設定用戶對檔案的刪除權限，不影響其他權限</p>
@@ -4727,6 +4362,371 @@ FILE_PERMISSION_ALL =&gt; 7</p>
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code> <code>true</code>: 成功，<code>false</code>: 失敗</p>
+<h1>21. DBSMOD_GiftVOH extends DBSMOD</h1>
+<h2>21.1 SetTables(protected)</h2>
+<pre><code class="language-php">protected function SetTables()
+</code></pre>
+<p>設定預設資料表參數 (實作抽象方法)</p>
+<p><strong>回傳</strong></p>
+<p><code>array</code></p>
+<h2>21.2 Select</h2>
+<pre><code class="language-php">public function Select($ID, $Field_Array = array())
+</code></pre>
+<p>查詢單筆資料</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">GiftVOHID</td>
+</tr>
+<tr>
+<td align="left"><code>$Field_Array</code></td>
+<td align="left"><code>array</code></td>
+<td align="left">查詢的資料表欄位名稱陣列</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>array</code>|<code>false</code></p>
+<h2>21.3 Create</h2>
+<pre><code class="language-php">public function Create($R_Data)
+</code></pre>
+<p>新增資料</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$R_Data</code></td>
+<td align="left"><code>array</code></td>
+<td align="left">GiftVOH資料表欄位名稱與資料的映射</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>array</code>|<code>false</code></p>
+<h2>21.4 Update</h2>
+<pre><code class="language-php">public function Update($ID, $R_Data)
+</code></pre>
+<p>更新資料</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">GiftVOHID</td>
+</tr>
+<tr>
+<td align="left"><code>$R_Data</code></td>
+<td align="left"><code>array</code></td>
+<td align="left">GiftVOH資料表欄位名稱與資料的映射</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>array</code>|<code>false</code></p>
+<h2>21.5 Delete</h2>
+<pre><code class="language-php">public function Delete($ID)
+</code></pre>
+<p>刪除資料</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">GiftVOHID</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>bool</code></p>
+<h2>21.6 SelectTYP</h2>
+<pre><code class="language-php">public function SelectTYP($ID, $Field_Array = array())
+</code></pre>
+<p>查詢單筆 GiftVOHTYP</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">GiftVOHTYPID</td>
+</tr>
+<tr>
+<td align="left"><code>$Field_Array</code></td>
+<td align="left"><code>array</code></td>
+<td align="left">查詢的資料表欄位名稱陣列</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>array</code>|<code>false</code></p>
+<h2>21.7 CreateTYP</h2>
+<pre><code class="language-php">public function CreateTYP($R_Data)
+</code></pre>
+<p>新增資料 GiftVOHTYP</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$R_Data</code></td>
+<td align="left"><code>array</code></td>
+<td align="left">GiftVOHTYP資料表欄位名稱與資料的映射</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>array</code>|<code>false</code></p>
+<h2>21.8 UpdateTYP</h2>
+<pre><code class="language-php">public function UpdateTYP($ID, $R_Data)
+</code></pre>
+<p>更新資料 GiftVOHTYP</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">GiftVOHTYPID</td>
+</tr>
+<tr>
+<td align="left"><code>$R_Data</code></td>
+<td align="left"><code>array</code></td>
+<td align="left">GiftVOHTYP資料表欄位名稱與資料的映射</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>array</code>|<code>false</code></p>
+<h2>21.9 DeleteTYP</h2>
+<pre><code class="language-php">public function DeleteTYP($ID)
+</code></pre>
+<p>刪除資料 GiftVOHTYP</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">GiftVOHTYPID</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>bool</code></p>
+<h2>21.10 SelectCode</h2>
+<pre><code class="language-php">public function SelectCode($ID, $Field_Array = array())
+</code></pre>
+<p>查詢單筆 GiftVOHCode</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">GiftVOHCodeID</td>
+</tr>
+<tr>
+<td align="left"><code>$Field_Array</code></td>
+<td align="left"><code>array</code></td>
+<td align="left">查詢的資料表欄位名稱陣列</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>array</code>|<code>false</code></p>
+<h2>21.11 CreateCode</h2>
+<pre><code class="language-php">public function CreateCode($R_Data)
+</code></pre>
+<p>新增資料 GiftVOHCode</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$R_Data</code></td>
+<td align="left"><code>array</code></td>
+<td align="left">GiftVOHCode資料表欄位名稱與資料的映射</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>array</code>|<code>false</code></p>
+<h2>21.12 UpdateCode</h2>
+<pre><code class="language-php">public function UpdateCode($ID, $R_Data)
+</code></pre>
+<p>更新資料 GiftVOHCode</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">GiftVOHCodeID</td>
+</tr>
+<tr>
+<td align="left"><code>$R_Data</code></td>
+<td align="left"><code>array</code></td>
+<td align="left">GiftVOHCode資料表欄位名稱與資料的映射</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>array</code>|<code>false</code></p>
+<h2>21.13 DeleteCode</h2>
+<pre><code class="language-php">public function DeleteCode($ID)
+</code></pre>
+<p>刪除資料 GiftVOHCode</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">GiftVOHCodeID</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>bool</code></p>
+<h2>21.14 ActivateGiftVOH</h2>
+<pre><code class="language-php">public function ActivateGiftVOH($GiftVOHID, $UserID, $Note = '', $DateTime = null)
+</code></pre>
+<p>啟用禮券；若成功，會同時更新 GiftVOHCode、GiftVOHUsage 資料表</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$GiftVOHID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">要啟用的 GiftVOHID</td>
+</tr>
+<tr>
+<td align="left"><code>$UserID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">擁有人的 UserID</td>
+</tr>
+<tr>
+<td align="left"><code>$Note</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">非必填，啟用備註，預設為空字串</td>
+</tr>
+<tr>
+<td align="left"><code>$DateTime</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">非必填，啟用時間，預設為當前時間</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>bool</code> 兌換成功回傳 <code>true</code>，否則回傳 <code>false</code></p>
+<h2>21.15 UpdateTYPIFOCNT(protected)</h2>
+<pre><code class="language-php">protected function UpdateTYPIFOCNT($ID, $Count = 1)
+</code></pre>
+<p>更新資料計數</p>
+<table>
+<thead>
+<tr>
+<th align="left">Param</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>$ID</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">GiftVOHTYPID</td>
+</tr>
+<tr>
+<td align="left"><code>$Count</code></td>
+<td align="left"><code>integer</code></td>
+<td align="left">計數待相加的數字</td>
+</tr>
+</tbody>
+</table>
+<p><strong>回傳</strong></p>
+<p><code>int</code>|<code>bool</code></p>
 <h1>22. DBSMOD_Goods extends DBSMOD</h1>
 <h2>22.1 SetTables(protected)</h2>
 <pre><code class="language-php">protected function SetTables()
@@ -8725,7 +8725,7 @@ echo $Sum['SALTax']; //22
 <h2>34.5 Update</h2>
 <pre><code class="language-php">public function Update($ID, $R_Data)
 </code></pre>
-<p>更新資料</p>
+<p>更新資料；若修改欄位不包括 <code>StatusFlag</code>，則會自動檢查是否達標或已審核，並依此更新 <code>StatusFlag</code>；若修改欄位不包括 <code>RunningState</code>，則會自動更新 <code>RunningState</code>；若旗標變更，則會觸發相關事件</p>
 <table>
 <thead>
 <tr>
@@ -8772,7 +8772,7 @@ echo $Sum['SALTax']; //22
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
 <h2>34.7 GetRunningState</h2>
-<pre><code class="language-php">public function GetRunningState($StatusFlag, $ExpireDateTime)
+<pre><code class="language-php">public function GetRunningState($StatusFlag, $EndDateTime)
 </code></pre>
 <p>取得任務狀態</p>
 <table>
@@ -8790,7 +8790,7 @@ echo $Sum['SALTax']; //22
 <td align="left">任務狀態旗標字串，可能的值為 <code>Paid</code>, <code>Hidden</code>, <code>Frozen</code>, <code>QuotaFilled</code>, `Reviewed</td>
 </tr>
 <tr>
-<td align="left"><code>$ExpireDateTime</code></td>
+<td align="left"><code>$EndDateTime</code></td>
 <td align="left"><code>string</code></td>
 <td align="left">任務到期時間</td>
 </tr>
@@ -8867,9 +8867,9 @@ echo $Sum['SALTax']; //22
 </tbody>
 </table>
 <h2>34.11 CheckExecutingToCompleted(protected)</h2>
-<pre><code class="language-php">protected function CheckExecutingToCompleted($ID)
+<pre><code class="language-php">protected function CheckExecutingToCompleted($StatusFlag, $EndDateTime, $ExecutionCNT, $ExecutionTotal)
 </code></pre>
-<p>檢查執行中的任務的執行次數是否已達標</p>
+<p>檢查執行中的任務的執行次數是否已達標，若已達標，則回傳新的狀態旗標</p>
 <table>
 <thead>
 <tr>
@@ -8880,18 +8880,33 @@ echo $Sum['SALTax']; //22
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>$ID</code></td>
+<td align="left"><code>$StatusFlag</code></td>
 <td align="left"><code>string</code></td>
-<td align="left">TaskID</td>
+<td align="left">任務狀態旗標字串</td>
+</tr>
+<tr>
+<td align="left"><code>$EndDateTime</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">任務到期時間</td>
+</tr>
+<tr>
+<td align="left"><code>$ExecutionCNT</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">已執行次數</td>
+</tr>
+<tr>
+<td align="left"><code>$ExecutionTotal</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">任務總執行次數</td>
 </tr>
 </tbody>
 </table>
 <p><strong>回傳</strong></p>
-<p><code>string</code>|<code>false</code> 若已達標，則回傳新的狀態旗標字串，否則回傳 <code>false</code></p>
+<p><code>string</code> 若已達標，則回傳新的狀態旗標字串</p>
 <h2>34.12 CheckCompletedToReviewed(protected)</h2>
-<pre><code class="language-php">protected function CheckCompletedToReviewed($ID)
+<pre><code class="language-php">protected function CheckCompletedToReviewed($TaskID, $StatusFlag, $EndDateTime, $ExecutionTotal)
 </code></pre>
-<p>檢查已達標任務的執行是否都已審核</p>
+<p>檢查已達標任務的執行是否都已審核，若皆已審核，則回傳新的狀態旗標</p>
 <table>
 <thead>
 <tr>
@@ -8902,14 +8917,29 @@ echo $Sum['SALTax']; //22
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>$ID</code></td>
+<td align="left"><code>$TaskID</code></td>
 <td align="left"><code>string</code></td>
 <td align="left">TaskID</td>
+</tr>
+<tr>
+<td align="left"><code>$StatusFlag</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">任務狀態旗標字串</td>
+</tr>
+<tr>
+<td align="left"><code>$EndDateTime</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">任務到期時間</td>
+</tr>
+<tr>
+<td align="left"><code>$ExecutionTotal</code></td>
+<td align="left"><code>int</code></td>
+<td align="left">任務總執行次數</td>
 </tr>
 </tbody>
 </table>
 <p><strong>回傳</strong></p>
-<p><code>string</code>|<code>false</code> 若已審核，則回傳新的狀態旗標字串，否則回傳 <code>false</code></p>
+<p><code>string</code> 若已審核，則回傳新的狀態旗標字串</p>
 <h1>35. DBSMOD_TaskExecution extends DBSMOD</h1>
 <h2>35.1 Properties</h2>
 <table>
@@ -9107,75 +9137,13 @@ echo $Sum['SALTax']; //22
 </table>
 <p><strong>回傳</strong></p>
 <p><code>bool</code></p>
-<h2>35.8 BindStatusEvent</h2>
-<pre><code class="language-php">public function BindStatusEvent($Trigger, $Event)
-</code></pre>
-<p>綁定任務狀態變更的事件</p>
-<table>
-<thead>
-<tr>
-<th align="left">Param</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>$Trigger</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">事件觸發的旗標字串，可能的值為: Expired, Reported, Reviewed, Passed, Paid, Closed</td>
-</tr>
-<tr>
-<td align="left"><code>$Event</code></td>
-<td align="left"><code>callable</code></td>
-<td align="left">事件函式，必須接受兩個參數: TaskExecutionID, TaskExecutionData</td>
-</tr>
-</tbody>
-</table>
-<p><strong>回傳</strong></p>
-<p><code>true</code></p>
-<h2>35.9 GetInitStatusFlag(protected)</h2>
+<h2>35.8 GetInitStatusFlag(protected)</h2>
 <pre><code class="language-php">protected function GetInitStatusFlag()
 </code></pre>
 <p>取得 TaskExecution 初始狀態旗標字串</p>
 <p><strong>回傳</strong></p>
 <p><code>string</code></p>
-<h2>35.10 FireStatusEvent(protected)</h2>
-<pre><code class="language-php">protected function FireStatusEvent($ID, $NewStatusFlag, $ORIStatusFlag, $TaskExecutionData = array())
-</code></pre>
-<p>觸發任務狀態變更的事件</p>
-<table>
-<thead>
-<tr>
-<th align="left">Param</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>$ID</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">TaskExecutionID</td>
-</tr>
-<tr>
-<td align="left"><code>$NewStatusFlag</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">新狀態旗標字串</td>
-</tr>
-<tr>
-<td align="left"><code>$ORIStatusFlag</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">原狀態旗標字串</td>
-</tr>
-<tr>
-<td align="left"><code>$TaskExecutionData</code></td>
-<td align="left"><code>array</code></td>
-<td align="left">TaskExecution資料</td>
-</tr>
-</tbody>
-</table>
-<h2>35.11 RevokeExecutionCount(protected)</h2>
+<h2>35.9 RevokeExecutionCount(protected)</h2>
 <pre><code class="language-php">protected function RevokeExecutionCount($ID)
 </code></pre>
 <p>撤回執行計數與參與人數；若同一參與者在同一任務中有其他未逾期任務，則不撤回</p>
