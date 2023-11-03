@@ -54,7 +54,7 @@ main code {
     <nav></nav>
     <main>
         <h1>DBSMOD 說明文件</h1>
-<p><em>更新於 2023-10-27T09:21:10.061Z</em></p>
+<p><em>更新於 2023-11-03T09:42:24.839Z</em></p>
 <p><a href="https://github.com/dearsoft-com/DBSMOD">DBSMOD 存放區 (私有)</a></p>
 <p><code>DBSMOD</code> 類別是資料庫查詢作業的模組。在根類別 <code>DBSMOD</code> 中包含了基本的資料庫查詢的方法，而繼承 <code>DBSMOD</code> 的子類別 (如 <code>DBSMOD_User</code>, <code>DBSMOD_PDT</code> 等) 則是將常用的資料庫查詢作業整合為物件的方法，讓不同的服務都能夠遵循一致的資料庫使用邏輯。</p>
 <p>例如，新增產品時會進行多次資料庫查詢</p>
@@ -2893,7 +2893,7 @@ main code {
 </tr>
 <tr>
 <td align="left"><code>$Count</code></td>
-<td align="left"><code>integer</code></td>
+<td align="left"><code>int</code></td>
 <td align="left">計數待相加的數字</td>
 </tr>
 </tbody>
@@ -3129,7 +3129,7 @@ main code {
 </tr>
 <tr>
 <td align="left"><code>$Count</code></td>
-<td align="left"><code>integer</code></td>
+<td align="left"><code>int</code></td>
 <td align="left">計數待相加的數字</td>
 </tr>
 </tbody>
@@ -3524,7 +3524,7 @@ main code {
 </tr>
 <tr>
 <td align="left"><code>$Count</code></td>
-<td align="left"><code>integer</code></td>
+<td align="left"><code>int</code></td>
 <td align="left">計數待相加的數字</td>
 </tr>
 </tbody>
@@ -4773,7 +4773,7 @@ FILE_PERMISSION_ALL =&gt; 7</p>
 </tr>
 <tr>
 <td align="left"><code>$Count</code></td>
-<td align="left"><code>integer</code></td>
+<td align="left"><code>int</code></td>
 <td align="left">計數待相加的數字</td>
 </tr>
 </tbody>
@@ -5143,7 +5143,7 @@ FILE_PERMISSION_ALL =&gt; 7</p>
 </tr>
 <tr>
 <td align="left"><code>$Count</code></td>
-<td align="left"><code>integer</code></td>
+<td align="left"><code>int</code></td>
 <td align="left">計數待相加的數字</td>
 </tr>
 </tbody>
@@ -6098,7 +6098,7 @@ FILE_PERMISSION_ALL =&gt; 7</p>
 </tr>
 <tr>
 <td align="left"><code>$Count</code></td>
-<td align="left"><code>integer</code></td>
+<td align="left"><code>int</code></td>
 <td align="left">計數待相加的數字</td>
 </tr>
 </tbody>
@@ -6394,7 +6394,7 @@ FILE_PERMISSION_ALL =&gt; 7</p>
 </tr>
 <tr>
 <td align="left"><code>$Count</code></td>
-<td align="left"><code>integer</code></td>
+<td align="left"><code>int</code></td>
 <td align="left">計數待相加的數字</td>
 </tr>
 </tbody>
@@ -6886,7 +6886,7 @@ FILE_PERMISSION_ALL =&gt; 7</p>
 </tr>
 <tr>
 <td align="left"><code>$Count</code></td>
-<td align="left"><code>integer</code></td>
+<td align="left"><code>int</code></td>
 <td align="left">計數待相加的數字</td>
 </tr>
 </tbody>
@@ -7168,7 +7168,7 @@ FILE_PERMISSION_ALL =&gt; 7</p>
 </tr>
 <tr>
 <td align="left"><code>$Count</code></td>
-<td align="left"><code>integer</code></td>
+<td align="left"><code>int</code></td>
 <td align="left">計數待相加的數字</td>
 </tr>
 </tbody>
@@ -9396,7 +9396,7 @@ echo $Sum['SALTax']; //22
 <h2>36.6 Update</h2>
 <pre><code class="language-php">public function Update($ID, $R_Data)
 </code></pre>
-<p>更新資料，若狀態變更為已逾期，則撤回參與人數</p>
+<p>更新資料；若狀態變更為已逾期，則撤回參與人數；若狀態變更為已審核，則更新審核時間</p>
 <table>
 <thead>
 <tr>
@@ -9693,7 +9693,7 @@ echo $Sum['SALTax']; //22
 </tr>
 <tr>
 <td align="left"><code>$Count</code></td>
-<td align="left"><code>integer</code></td>
+<td align="left"><code>int</code></td>
 <td align="left">計數待相加的數字</td>
 </tr>
 </tbody>
@@ -10474,7 +10474,7 @@ echo $Result-&gt;Token;            //M7YdNTZhxPtQ8K4woqI9L0d...
 </tr>
 <tr>
 <td align="left"><code>$Count</code></td>
-<td align="left"><code>integer</code></td>
+<td align="left"><code>int</code></td>
 <td align="left">計數待相加的數字</td>
 </tr>
 </tbody>
@@ -11421,7 +11421,7 @@ print_r($UserSource);
 </tr>
 <tr>
 <td align="left"><code>$Count</code></td>
-<td align="left"><code>integer</code></td>
+<td align="left"><code>int</code></td>
 <td align="left">計數待相加的數字</td>
 </tr>
 </tbody>
