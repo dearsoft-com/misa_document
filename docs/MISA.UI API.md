@@ -15,13 +15,6 @@
 |PIN|epy001|text|
 
 
-### 🔑 Authentication bearer
-
-|Param|value|Type|
-|---|---|---|
-|token|test-token|string|
-
-
 ### Response: 200
 ```json
 {
