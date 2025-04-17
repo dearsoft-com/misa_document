@@ -51,7 +51,7 @@ networks:
 
 ### 3.1 透過文字編輯器修改 Nginx 的設定檔
 
-檔案位址：/etc/nginx/sites-available/fap.misa.com.tw
+檔案位址：/etc/nginx/sites-available/{{service_name}}
 
 ```nginx
 map $http_upgrade $connection_upgrade {
@@ -155,12 +155,27 @@ server {
 
 ## 4. 啟動服務
 
-執行以下命令啟動服務：
+在完成以上步驟後，服務就可以啟動了。需要執行以下的兩個步驟啟動容器及 Nginx。
+
+### 4.1 啟動容器：
+
+執行以下命令啟動 Docker 容器：
 
 ```bash
 cd /home/web/docker/{service_name}
 docker compose up -d
 ```
+
+### 4.2 啟動 Nginx：
+
+如果用文字編輯器修改 Nginx 的設定檔，則需要重新啟動 Nginx 服務，執行以下命令：
+
+```bash
+docker exec -it misa-proxy-server nginx -s reload
+```
+
+如果用 GUI 修改 Nginx 的設定檔，需要在以下頁面打開 `已啟用` 開關來啟用 Nginx 的設定：
+![images/nginx_ui_07.png](images/nginx_ui_07.png)
 
 ## 5. 檢查服務的運行狀態
 
