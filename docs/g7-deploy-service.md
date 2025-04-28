@@ -36,7 +36,7 @@ services:
 
     # 新增 networks 設定，ipv4_address 設定為 172.20.*.* 的 IP 位址，請注意不要與其他服務衝突
     networks:
-      misa-network
+      misa-network:
         ipv4_address: 172.20.0.3
 
 # 需新增以下的 networks 設定
